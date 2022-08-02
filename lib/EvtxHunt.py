@@ -32,10 +32,7 @@ def Evtx_hunt(files,str_regex,input_timzone,output):
                 if len(EventID) > 0:
                     Computer = Computer_rex.findall(record['data'])
                     Channel = Channel_rex.findall(record['data'])
-                    if len(Channel)>0:
-                        channel=Channel[0]
-                    else:
-                        channel=" "
+                    channel = Channel[0] if len(Channel)>0 else " "
                     #print(record['data'])
                 #    if record['data'].lower().find(str_regex.lower())>-1:
                     if rex.findall(record['data']):

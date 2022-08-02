@@ -409,7 +409,7 @@ def threat_hunt(path,str_regex):
     else:
         print("Issue with the path" )
         return
-    print("hunting ( %s ) in files ( %s )"%(str_regex,files))
+    print(f"hunting ( {str_regex} ) in files ( {files} )")
     #user_string = input('please enter a string to convert to regex: ')
     EvtxHunt.Evtx_hunt(files,str_regex,input_timezone,Output)
 

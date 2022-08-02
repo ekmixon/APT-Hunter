@@ -222,7 +222,7 @@ def threat_hunt(path,str_regex):
     else:
         print("Issue with the path" )
         return
-    print("hunting ( %s ) in files ( %s )"%(str_regex,files))
+    print(f"hunting ( {str_regex} ) in files ( {files} )")
     #user_string = input('please enter a string to convert to regex: ')
     EvtxHunt.Evtx_hunt(files,str_regex,input_timezone,Output)
 
@@ -304,9 +304,6 @@ def main():
     if (args.path is None ):# and args.security is None and args.system is None and args.scheduledtask is None and args.defender is None and args.powershell is None and args.powershellop is None and args.terminal is None and args.winrm is None and args.sysmon is None):
         print("You didn't specify a path for the logs \nuse --help to print help message")
         exit()
-    #if args.type is None and args.hunt is None:
-    #    print("log type must be defined using -t \ncsv( logs from get-eventlog or windows event log GUI or logs from Get-WinEvent ) , evtx ( EVTX extension windows event log )\nuse --help to print help message")
-    #    exit()
     else:
         #if args.path is not None:
         Path=args.path
@@ -323,27 +320,6 @@ def main():
 
         report()
         return
-        if args.security  is not None:
-            Security_path = args.security
-
-        if args.system  is not None:
-            system_path=args.system
-
-        if args.scheduledtask  is not None:
-            scheduledtask_path=args.scheduledtask
-
-        if args.defender  is not None:
-            defender_path=args.defender
-        if args.powershell  is not None:
-            powershell_path=args.powershell
-        if args.powershellop  is not None:
-            powershellop_path=args.powershellop
-        if args.terminal  is not None:
-            terminal_path=args.terminal
-        if args.winrm  is not None:
-            winrm_path=args.winrm
-        if args.sysmon  is not None:
-            sysmon_path=args.sysmon
 
         #if args.type=="evtx":
         #    #evtxdetect()
